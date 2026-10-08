@@ -27,9 +27,11 @@ function success($redirectTo = 'landingpage.php', $delayMs = 2500) {
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                background: #f0fdf4;
+                background: radial-gradient(1200px 600px at -10% -10%, #e6f0ff 0%, transparent 60%),
+                radial-gradient(900px 500px at 110% 10%, #e6f3ff 0%, transparent 60%),
+                linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);;
                 font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-                color: #14532d;
+                color: #163969;
             }
             .check { width: 140px; height: 140px; animation: pop .5s ease-out .9s both; }
             .check circle {
@@ -54,7 +56,7 @@ function success($redirectTo = 'landingpage.php', $delayMs = 2500) {
                 animation: draw .5s ease-out .7s forwards;
             }
             h1 { margin: 24px 0 4px; font-size: 1.8rem; animation: fade .6s ease-out 1.2s both; }
-            p  { margin: 0; color: #166534; animation: fade .6s ease-out 1.4s both; }
+            p  { margin: 0; color: #163969; animation: fade .6s ease-out 1.4s both; }
 
             @keyframes draw { to { stroke-dashoffset: 0; } }
             @keyframes pop {
