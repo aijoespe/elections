@@ -385,6 +385,7 @@ $flags = JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
     <header>
         <div class="hero">
             <img src="sslg.png" alt="" width="50px">
+            <img src="pcshs.png" alt="" width="60px">
             <p>SSLG Elections S.Y. 2026-2027</p>
         </div>
         <h1 align="center">RESULTS</h1>
