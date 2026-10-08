@@ -217,6 +217,13 @@
       background-image: url(sslg.png);
       background-size: cover;
     }
+    
+    .logo-2 {
+      width: 60px;
+      height: 60px;
+      background-image: url(pcshs.png);
+      background-size: cover;
+    }
 
     select {
       background-image: linear-gradient(45deg, transparent 50%, #2a5fb9 50%), linear-gradient(135deg, #2a5fb9 50%, transparent 50%), linear-gradient(to right, #cfe0ff, #cfe0ff);
@@ -246,6 +253,7 @@
   <header class="hero">
     <div class="brand">
       <div class="logo" aria-hidden="true"></div>
+      <div class="logo-2" aria-hidden="true"></div>
       <div>SSLG Elections School Year 2026-2027 </div>
     </div>
 
@@ -263,26 +271,39 @@
       <form class="form" action="insert.php" method="POST">
         <div class="grid-2">
           <div>
-            <label for="fullname">Last Name</label>
-            <input id="fullname" type="text" placeholder="ex. DELA CRUZ" name="ln" required />
+            <label for="lastName">Last Name</label>
+            <input type="text" name="ln" required placeholder="ex. PIMENTEL"
+            pattern="[A-Z .,'\-]+"
+            title="Please use CAPITAL LETTERS only"
+            oninput="this.value = this.value.toUpperCase();">
           </div>
           <div>
-            <label for="fullname">First Name</label>
-            <input id="fullname" type="text" placeholder="ex. Juan Miguel" name="fn" required />
+            <label for="firstName">First Name</label>
+            <input type="text" name="fn" required placeholder="ex. JOHN FRANCIS"
+            pattern="[A-Z .,'\-]+"
+            title="Please use CAPITAL LETTERS only"
+            oninput="this.value = this.value.toUpperCase();">
           </div>
           <div>
             <label for="fullname">Middle Name</label>
-            <input id="fullname" type="text" placeholder="ex. Pimentel" name="mn" required />
+            <input type="text" name="mn" required placeholder="ex. PERJES"
+            pattern="[A-Z .,'\-]+"
+            title="Please use CAPITAL LETTERS only"
+            oninput="this.value = this.value.toUpperCase();">
           </div>
           <div>
-            <label for="lrn">Learner Reference Number</label>                  
-            <input id="lrn" type="text" inputmode="numeric" min="12" max="12" placeholder="Ex. 409914378245" name="LRN" required />
+            <label for="lrn">Learners Reference Number</label>
+            <input id="lrn" type="text" inputmode="numeric"
+            pattern="[0-9]{12}" maxlength="12" minlength="12"
+            title="LRN must be exactly 12 digits"
+            placeholder="Ex. 123456789012" name="LRN" required />
             <div class="note">seen on your ID</div>
           </div>
         </div>
         <div>
           <label for="section">Choose your section</label>
-          <select name="Section" id="section" required>
+          <select name="section" id="section" required>
+            <option value="" selected disabled>Select your section</option>
             <option value="archimedes">7 - Archimedes</option>
             <option value="aristotle">7 - Aristotle</option>
             <option value="curie">7 - Curie</option>
