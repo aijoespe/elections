@@ -1,0 +1,377 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Generation Time: Oct 08, 2026 at 05:46 PM
+-- Server version: 10.11.2-MariaDB
+-- PHP Version: 8.2.3
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `elections`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `candidates`
+--
+
+CREATE TABLE `candidates` (
+  `id` int(11) NOT NULL,
+  `name` varchar(150) NOT NULL,
+  `position` varchar(100) NOT NULL,
+  `votes` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `candidates`
+--
+
+INSERT INTO `candidates` (`id`, `name`, `position`, `votes`) VALUES
+(1, 'Purple Cheese B. Hiyao', 'Grade 7 Representative', 1),
+(2, 'Jetrix A. Nieves', 'Grade 7 Representative', 0),
+(3, 'Janna Mika C. Agustin', 'Grade 7 Representative', 0),
+(4, 'Morris Joshua Sunga', 'Grade 7 Representative', 1),
+(5, 'Britanny Faith N. Ungco', 'Grade 7 Representative', 0),
+(6, 'Adelaide Marguerite M. Vivar', 'Grade 7 Representative', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lrn_list`
+--
+
+CREATE TABLE `lrn_list` (
+  `lrn` char(12) NOT NULL,
+  `fullName` varchar(255) NOT NULL,
+  `section` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `lrn_list`
+--
+
+INSERT INTO `lrn_list` (`lrn`, `fullName`, `section`) VALUES
+('109405190057', 'JARDIO, GIOVANNI PAOLO', 'Archimedes'),
+('109411190001', 'ARELLANO, LUCAS JOACHIM', 'Archimedes'),
+('127995190240', 'VILLONO, EURIE', 'edison'),
+('136677190084', 'GAROFIL, GAVIN ARTEMIS', 'galileo'),
+('136688200236', 'VILLAVICENCIO, ADRIEL', 'einstein'),
+('136718190220', 'ARDIENTE, MARK KENJIE', 'edison'),
+('136718190722', 'BENDALIAN, TEEJAY', 'darwin'),
+('136720190064', 'VERUECO, KING JAMES', 'darwin'),
+('136720190319', 'CORONADO, KURT RYUUKI', 'curie'),
+('136721190108', 'GEMINO, ZION', 'curie'),
+('136721190125', 'MACAPAGAL, BIEL', 'einstein'),
+('136721190157', 'TRAJANO, KASHMIR', 'Archimedes'),
+('136721190235', 'MATABAN, HEINRICH', 'darwin'),
+('136721190276', 'ANIBAN, IAN VINCENT', 'Archimedes'),
+('136721200426', 'CORONEL, LUKE ISAIAH', 'aristotle'),
+('136721200494', 'ARTIGAS, KRISTOFF LIAM', 'galileo'),
+('136722190059', 'HIYAO, PURPLE CHEESE', 'galileo'),
+('136723190189', 'LATTAO JR., ARVIL ONESIMO', 'curie'),
+('136723190219', 'ARAGONES, ANDREI', 'aristotle'),
+('136723190497', 'GUERZON, AARON WILLIAM', 'darwin'),
+('136724190085', 'ORTEGA, LEIMORE NOVIE', 'curie'),
+('136724190155', 'DEL ROSARIO, NATHAN JAMES', 'curie'),
+('136724190158', 'DE LUNA, CHLOE', 'galileo'),
+('136726190015', 'JAVILLONAR, NATHALIE LARAINE', 'darwin'),
+('136728190121', 'YALUNG, WINELLAVIN JAYCE', 'aristotle'),
+('136728190303', 'GUBAN, IMEE', 'edison'),
+('136729190010', 'PALOMA, ZETH DANIELLE', 'edison'),
+('136731190045', 'MARCELO, JARED', 'darwin'),
+('136732190088', 'DELA ROSA, APRILLE JOY', 'einstein'),
+('136733190042', 'HERNANDEZ, ZEE', 'galileo'),
+('136733190076', 'TABUDLONG, PRINCE CHARLSON', 'edison'),
+('136733190078', 'BALDERAMA, KATE LEXI', 'edison'),
+('136733190128', 'BALILO, JENNIELEN', 'einstein'),
+('136734190009', 'SAMPANG, JEDI FRANCIS', 'curie'),
+('136735190202', 'GOTO, MARIELLA ISHIE ANNE', 'darwin'),
+('136735200461', 'AQUINO, JANSEN MIKHAEL', 'darwin'),
+('136736190010', 'UNGCO, BRITANNY FAITH', 'darwin'),
+('136736190030', 'HOMERES, ANDREA PAULENE', 'Archimedes'),
+('136736190041', 'SABAS, KURT LESTER', 'edison'),
+('136736190191', 'DASILAG, NATHAN ALDRIN', 'darwin'),
+('136736190194', 'SUSANA, JASPER JADE', 'aristotle'),
+('136737190014', 'VALENZUELA, JEMUEL', 'curie'),
+('136737190041', 'SAYSON, DRAVENE SKYE', 'galileo'),
+('136737200508', 'ALFONSO, HINA', 'darwin'),
+('136739190120', 'TAN, ALEX LOUIS', 'edison'),
+('136739190126', 'TODOC, VIEL MARGARETT', 'darwin'),
+('136739190298', 'LAMATAO, JANEL', 'galileo'),
+('136739190360', 'MATEO, MARCO PRINCE', 'galileo'),
+('136739190524', 'CUNTAPAY, MEACY', 'aristotle'),
+('136739190531', 'PAIGNA, FRANCHESCA AIRAH', 'einstein'),
+('136740180170', 'DAMIAN, PRINCESS JASMINE RNE', 'curie'),
+('136740190085', 'MATAVERDE, LOTHLORIEN', 'Archimedes'),
+('136740190133', 'BORJA, RENDZ BENEDICT', 'edison'),
+('136741190081', 'BERDIN, GALEN MATTHEW', 'curie'),
+('136741190135', 'ODAVAR, JOBHEMOR', 'aristotle'),
+('136741190190', 'TAMAYO, LOIS DANIAH', 'curie'),
+('136741190230', 'CELESTINO, JULIA', 'einstein'),
+('136741190245', 'REFUGIO, CHARMAINE YESHAH', 'galileo'),
+('136741190309', 'ABALAHON, ALEXANDRA', 'curie'),
+('136741190356', 'IGLESIA, PRINCE MARCO', 'darwin'),
+('136741200676', 'RIVERA, MARCHELLIE', 'curie'),
+('136742190043', 'SOLOMON, ALFRED JACOB', 'einstein'),
+('136742190059', 'DE LUNA, JHOURNIE', 'Archimedes'),
+('136742190062', 'SABSILICA, SEAN KEVIN', 'darwin'),
+('136742190066', 'VALENZUELA, SAGE ADRIAN', 'aristotle'),
+('136742190099', 'FERREROS, NICOLAS ZACHARY', 'curie'),
+('136743190115', 'CALANGIAN, LANCE CRISTOFFER', 'aristotle'),
+('136743190143', 'MANUEL, MHYCO EHRON', 'edison'),
+('136743190391', 'DAZAL, NICOLE', 'Archimedes'),
+('222501190053', 'ABELLA, KYRA VICTORIA', 'aristotle'),
+('225501190002', 'DOMAOAL, ALDRIAN ACE', 'galileo'),
+('225501190038', 'GARCIA, LURDIAN', 'einstein'),
+('225501190063', 'BAGON, ALDRICH GABRIEL', 'curie'),
+('225501190066', 'MARTINEZ, SEAN DOMINIC', 'aristotle'),
+('225501190098', 'ALBERTO, KREGIAN JAMIELR', 'einstein'),
+('225501190204', 'PIODO III, ANTONIO', 'edison'),
+('225501190283', 'GARADO, SEAN KAYZER', 'darwin'),
+('225501190327', 'PIMENTEL, ETHAN GABRIEL', 'curie'),
+('401217190013', 'JALOSJOS, DYLAN JOAQUIN', 'aristotle'),
+('402949190004', 'RAPIS, GABRIEL ADRIAN', 'galileo'),
+('402967190001', 'AGUILAR, ROSH NATHAN', 'galileo'),
+('403006190036', 'SIMBULAN, JADEN SKY', 'darwin'),
+('403012190013', 'ILAGAN, ISAIAH ANDREI', 'edison'),
+('403044190002', 'DELA ROSA, CLARK LIAM', 'edison'),
+('403050190007', 'NOTARIO, GAVIN ZACHARY', 'curie'),
+('403050190009', 'TELADO, ED GAVIN FRANK', 'Archimedes'),
+('403051190031', 'ANDRES, CYANA KEI', 'einstein'),
+('403088190003', 'ANGELES, ANDEA GAIL', 'galileo'),
+('403545200003', 'BENOZA, AYESHA MEREDITH', 'aristotle'),
+('405901180013', 'SUNGA, MORRIS JOSHUA', 'Archimedes'),
+('406290190011', 'CALAYAG, ANDREI KRISTOFF', 'edison'),
+('406581190007', 'SALAZAR, NOAH LYON', 'einstein'),
+('406857190015', 'GARCIA, JULIANNA SHILOH', 'galileo'),
+('406873190044', 'MORONG, NIKOLAI', 'einstein'),
+('406876190013', 'LAPINA, KATLYN AGUIDA', 'einstein'),
+('406876190026', 'ENRIQUEZ, RON ANDREW', 'einstein'),
+('406879190023', 'DUMANDAN, RAFAELLE ANGELA', 'edison'),
+('406880190023', 'RALUTIN, MARY ELISE', 'Archimedes'),
+('406880190046', 'LEGSON, JASMINE REI', 'darwin'),
+('406880190051', 'MENDOZA, SEAN MATTHEW', 'Archimedes'),
+('406880190080', 'ICATLO, AIDEEN SAVANNAH', 'einstein'),
+('406881180006', 'VILLAFLOR, EUNICE CARIZ', 'einstein'),
+('406881190029', 'BALTAZAR, PAUL IDRIS', 'galileo'),
+('406881190054', 'UBONGEN, SUJAE GRACE', 'galileo'),
+('406884190010', 'BERNARDO, UNA SABEL', 'edison'),
+('406885190005', 'GARDOSE, PRINCE DENIEL AQUIMUS', 'galileo'),
+('406885190019', 'LOPEZ, MARGAUX', 'Archimedes'),
+('406885190020', 'PENETRANTE, ATHENA CHLOE', 'edison'),
+('406885190028', 'BALLETA, ELIARAJ', 'aristotle'),
+('406889190033', 'GUMILAO, BENEDICT HACHI', 'einstein'),
+('406889190080', 'SAMSON, ISABELLA LOUISE', 'aristotle'),
+('406892190049', 'SALIM, LIAM ZENDRYC', 'galileo'),
+('406898190020', 'PEREGRINO, LORIC EUGENE', 'einstein'),
+('406899190012', 'CASTANAS, FRITZIE ALEXIAH MAY', 'galileo'),
+('406905190052', 'MAMUCOD, RHIAN DOMINIQUE', 'edison'),
+('406908190311', 'ABUAN, CHRISTEN SOFIA', 'edison'),
+('406910190012', 'SENGA, LIAM GABRIEL', 'edison'),
+('406910190039', 'NABUAB, SOPHIA BIANCA', 'galileo'),
+('406910190058', 'LINGA, YHASSY VIEN', 'aristotle'),
+('406914190036', 'LAYONES, JADEN SAMUEL', 'Archimedes'),
+('406915180007', 'ABAD, AIMEE KAORI', 'Archimedes'),
+('406919190002', 'EVANGELISTA, CHRISTIAN LIAM', 'Archimedes'),
+('406920180051', 'ESQUEJO, CALVIN DRAKE', 'galileo'),
+('406920180064', 'SAN AGUSTIN, JANNA MIKA', 'darwin'),
+('406920180074', 'IBABAO, ZIDANE', 'galileo'),
+('406920180076', 'MIRONDO, WEBB JARED', 'aristotle'),
+('406920190007', 'DOMINGUEZ, MICAH ELISE', 'galileo'),
+('406920190023', 'TEJONES, LUNA ISABELLA', 'aristotle'),
+('406920200027', 'SURIGAO, EMMETT YESHUA', 'curie'),
+('406926160031', 'FLORENTINO, GIANNA SKYE', 'Archimedes'),
+('406927190001', 'BUDIONGAN, MHARL JAIDEN', 'einstein'),
+('406927190016', 'ZAMBRANA, ALEXA BERNICE', 'Archimedes'),
+('406931190001', 'CATIBES, ZEBASTIAN KIELLE', 'galileo'),
+('406933190006', 'MENSOLA, LIAM ANDREI', 'curie'),
+('406936190016', 'GONZALES, AVERY CARINA', 'aristotle'),
+('406938190029', 'BONQUIN, MARTINA LOUAYNE', 'galileo'),
+('406938190034', 'JUNIO, RAFA MISHKA', 'aristotle'),
+('406938190035', 'VILLANUEVA, PIA CHRISTYANNE', 'darwin'),
+('406940190001', 'VELANTE, MATTHEW JORIEL', 'edison'),
+('406941190005', 'SUAREZ, ASHTON NIIKOLO', 'galileo'),
+('406941190014', 'RUIZ, ISAIAH', 'aristotle'),
+('406941190024', 'TAN, DANREE MIR', 'einstein'),
+('406941200001', 'PALOMAR, CHLOE ANNE', 'Archimedes'),
+('406942190002', 'CANONO, CLIFFORD ISAIAH', 'galileo'),
+('406942190018', 'GARCIA, ARRIELA READHORA', 'curie'),
+('406943190006', 'JOMAO-AS, ROAN NERGELYNE', 'curie'),
+('406945190005', 'GERONIMO, SAM EON BENEDICT', 'aristotle'),
+('406946190017', 'PACIS, JULIANNA DANIELLE', 'aristotle'),
+('406946190029', 'NIEVES, JETRIX', 'Archimedes'),
+('406946190030', 'PIDOT, RIGEL MARK', 'Archimedes'),
+('406946190031', 'AQUINO, ALPHONSO LAURENT', 'curie'),
+('406946190080', 'PALABRICA, MA. CRISTINA YSABEL', 'galileo'),
+('406946190086', 'BOGLOSA, JAE LAUREN', 'einstein'),
+('406946190092', 'LADERA, MEGUMI AZON', 'Archimedes'),
+('406965190002', 'PADILLA, PAULINE ERIKA', 'darwin'),
+('407298190005', 'DELA ROSA, PATRISHA LYN', 'curie'),
+('408227190017', 'GATCHALIAN, ANGEL VICTOR', 'edison'),
+('408290190007', 'DOLORICAL, ANDI MIKAELA', 'aristotle'),
+('408290190013', 'PAJELA, MARCUS VICTOR', 'aristotle'),
+('408290190014', 'PINEDA, KENDALL GABRIELLE', 'einstein'),
+('408290190018', 'AYSON, RENZO NATHANIEL', 'edison'),
+('408418200124', 'VERTUDEZ, UNI ORIANTHI', 'edison'),
+('408621190003', 'FLORENDO, JULIANNE PAULYNE', 'einstein'),
+('408676190005', 'DOLON, JOHN EMMANUELLE', 'einstein'),
+('408676190010', 'SAMONTE, ADRIEL CALEB', 'Archimedes'),
+('408751190004', 'CELIS, SAVANNAH VENIEZE', 'darwin'),
+('408908190001', 'PERJE, GAVIN COBIE', 'galileo'),
+('408964190015', 'BALDOVINO, AYA LOUISE', 'darwin'),
+('408976190042', 'PELICANO, IRIS MAYUMI', 'curie'),
+('409166190002', 'DOMETITA, AISAAC MARKUS', 'Archimedes'),
+('409871190001', 'EDUCADO, YAAL ZEUS', 'darwin'),
+('409871190018', 'ASONZA, BIANCA YSABELLE', 'aristotle'),
+('410100190010', 'JUANITES, LEM CHRISTMAH JOY', 'edison'),
+('425507190015', 'TAPANG, JOEHANNCE LEANDREW', 'galileo'),
+('425531190007', 'DE DIOS, JESSICA RYANN', 'edison'),
+('425581190027', 'DELA PENA, ARSENE', 'aristotle'),
+('425619190001', 'BRIZ, CIAN ROUVIN', 'darwin'),
+('425714190065', 'CADALZO, WENJORIE WENDEL', 'curie'),
+('425714190137', 'COPIA, JACOB KEFFER', 'Archimedes'),
+('425714190139', 'YLANAN, ANGELO PAUL', 'galileo'),
+('425751190013', 'POLICARPIO, EZEKIEL JOSEF', 'aristotle'),
+('425806190009', 'HERRERA, SAMANTHA YSABELLE', 'einstein'),
+('468576190002', 'CATALAN, ALDRICH CARMELO', 'einstein'),
+('482052190002', 'BALOG, LUKE IVAN KRISTOFF', 'darwin'),
+('482052190005', 'TOLENTINO, ROCHER', 'curie'),
+('482052190010', 'MANALO, REBEKAH GAHZELLE', 'aristotle'),
+('483607180001', 'BIAZON, CARLISLE MERIS', 'aristotle'),
+('484020180022', 'BENIGNOS, ZEUS ANGELO', 'Archimedes'),
+('484043190135', 'REQUIZA, EDRICK JACE', 'Archimedes'),
+('484503190020', 'NACARIO, CARLAN GAVIN', 'galileo'),
+('484553190015', 'GODOY, JAMES ISAAC', 'edison'),
+('485013190026', 'MOSLARES, DANIELLE REESE', 'curie'),
+('485519180005', 'TINGIN, HANNA CLARISSE', 'einstein'),
+('485521190007', 'PURI, MIGUEL ZYRAM', 'darwin'),
+('485521190014', 'BIBAT, AALEYAH CASSIDY', 'darwin'),
+('485521190027', 'VILLEDO, MARIA SOFIA', 'Archimedes'),
+('485521190043', 'LAYOS, RANIELLE', 'edison'),
+('485521190046', 'MAGTOTO, KIEFER RYU', 'curie'),
+('485522190008', 'FRANCISCO, LANCE AILEN GREY', 'aristotle'),
+('485542190010', 'EGUALES, RIAN HANNA', 'curie'),
+('485546190003', 'DOMINGO, ALTHEA BEATRICE', 'Archimedes'),
+('485550190019', 'UMALI, CZARINA YZABELLE', 'einstein'),
+('485550190021', 'IBARRA, SKYLER OASIS', 'einstein'),
+('485550190028', 'SAMSON, SOFIA YSABEL', 'einstein'),
+('485552190012', 'DELFIN, SAMANTHA ALEXA', 'aristotle'),
+('485552190018', 'TALARO, TRISTAN RACEL', 'darwin'),
+('485553190012', 'FERRARO, ALESANA DOMINIQUE', 'darwin'),
+('485553190013', 'BARADAN, ATHENA CASSANDRA', 'Archimedes'),
+('485561190022', 'VIVAR, ADELAIDE MARGUERITE', 'curie'),
+('485563190006', 'MORATA, KURT JOZIAH', 'darwin'),
+('485563190009', 'CORDERO, JULIA LORRAINE', 'edison'),
+('485563190037', 'RODRIGUEZ, THEA NICOLE', 'edison'),
+('485563190043', 'GALAURA, JOHN RAFAEL', 'edison'),
+('485563190053', 'QUIZON, SAVANNAH JANE', 'darwin'),
+('485563190055', 'ANG, ALESANDRA MARI', 'galileo'),
+('485563190058', 'BUDY, EMMANUEL ALLEN', 'Archimedes'),
+('485564190006', 'PENADA, RONAN ETHAN JAMES', 'darwin'),
+('485564190028', 'SANTOS, CHARLES ANDREW', 'aristotle'),
+('485568180009', 'QUIOGUE, RYALONZO NICHOLAS', 'einstein'),
+('485571190030', 'MACARANAS, SIRI HAVEN', 'curie'),
+('485573190011', 'APUHIN, MARTINO LORETO', 'einstein'),
+('485573190012', 'DE GUZMAN, ERENE JOHANNA', 'darwin'),
+('485579190014', 'DUNGO, JARVIS ALISTAIR', 'edison'),
+('485579190021', 'VALERIO, MIA FRANCES', 'aristotle'),
+('485579190025', 'LAPUZ, LANA AVERY', 'curie'),
+('485585190021', 'VICENCIO, ALTHEA RYANNE', 'curie'),
+('485585190029', 'PACIFICO, RONNA CARLA MIKAELA', 'edison'),
+('485589190011', 'MANGULAB, JAMESVON', 'einstein'),
+('485590190020', 'LLANES, MARIANNE LOIS', 'galileo'),
+('485595190001', 'BACONAWA, ANDREI', 'einstein'),
+('485599190016', 'RESMA, CALI ALFRED', 'curie'),
+('485599190020', 'VICEO, CANDICE CHANEL', 'galileo'),
+('485599190023', 'PIMENTEL, AKIRA XIANCRIS', 'aristotle'),
+('485601190051', 'ANGELES, DENISSE JEWEL', 'Archimedes'),
+('485603190006', 'EDER, JAN CALEB', 'aristotle'),
+('485610190030', 'GAVINO, CARLOS MARTIN', 'Archimedes'),
+('485611190004', 'AREVALO, SOFIA FATRISH CLAUDE', 'curie'),
+('485611190009', 'MORALITA, JOHN RYLEE', 'edison'),
+('485613190012', 'DUENAS, LANCE MATTHEW', 'curie'),
+('485621190015', 'DELA CRUZ, MICHAILLA JOELLE', 'Archimedes'),
+('485624190003', 'CALUMPIANO, AMIEL JADEN', 'darwin'),
+('485624190011', 'DINAPO, SEAN WYNN', 'darwin'),
+('485624190025', 'SEDIARIN, SHEKINAH GLYCEL', 'Archimedes'),
+('494018190001', 'DE GUZMAN, ZEV ALEN', 'edison');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `voters`
+--
+
+CREATE TABLE `voters` (
+  `id` int(11) NOT NULL,
+  `lastName` varchar(150) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `middleName` varchar(255) NOT NULL,
+  `lrn` varchar(30) NOT NULL,
+  `section` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `voters`
+--
+
+INSERT INTO `voters` (`id`, `lastName`, `firstName`, `middleName`, `lrn`, `section`) VALUES
+(4, 'LLANES', 'MARIANNE LOIS', 'DEL ROSARIO', '485590190020', 'galileo');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `candidates`
+--
+ALTER TABLE `candidates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `lrn_list`
+--
+ALTER TABLE `lrn_list`
+  ADD PRIMARY KEY (`lrn`),
+  ADD KEY `idx_section` (`section`);
+
+--
+-- Indexes for table `voters`
+--
+ALTER TABLE `voters`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `lrn` (`lrn`),
+  ADD UNIQUE KEY `lrn_2` (`lrn`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `candidates`
+--
+ALTER TABLE `candidates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `voters`
+--
+ALTER TABLE `voters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
